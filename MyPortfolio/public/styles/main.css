@@ -1,10 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans&display=swap');
+
 body {
-    padding-left: 2em;
-}
+    padding-left: 4em;
+    font-size: 18px;
+    line-height: 1.5;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: lightpink;
+    background-image: linear-gradient(145deg, rgba(232, 87, 237, 0.15) 0%,rgba(109, 137, 69, 0.15) 100%),linear-gradient(75deg, rgb(33, 138, 184),rgb(0, 241, 181));}
+
+h1, h2, h3{
+    line-height: 1.2;}
 
 body#about img{height: 15em;}
 body#portfolio img{height: 25em;}
 
 p {
     max-width: 50em;
+}
+
+body {
+    display: grid;
+}
+
+@media screen and (min-width: 20em) {
+    body {
+    display: grid;
+    grid-template-areas: "head head" "nav main" "foot foot";
+    grid-template-rows: auto 1fr auto;
+    }
+}
+
+header {
+    grid-area: "head";
+    font-family: 'Pixelify Sans', sans-serif;
+    color: yellow;
+}
+
+nav {
+    grid-area: "nav";
+    background-color: aqua;
+}
+
+main{
+    grid-area: "main";
+}
+
+footer{
+    grid-area: "foot";
+}
+
+header, footer {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+body > * {
+    padding-left: var(--horizontal-space);
+}
+
+header h1, footer h1{
+    margin: 0;
+}
+body#portfolio ul#portfolioItems {
+    display: flex;
+    flex-wrap: wrap;
+    flex: 1;
+    list-style-type: none;
+    padding: 0;
+}
+
+body#portfolio ul#portfolioItems li img {
+    max-width: 100%;
 }
